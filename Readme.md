@@ -1,7 +1,7 @@
 # Личный проект «YetiCave»
 
 * Студент: [Алексей Устинов](https://up.htmlacademy.ru/php/9/user/81547).
-* Наставник: `Неизвестно`.
+* Наставник: [Олег Мифле](https://htmlacademy.ru/profile/id496565).
 
 ---
 
