@@ -3,8 +3,6 @@ require('data.php');
 require('helpers.php');
 require('functions.php');
 
-$is_auth = rand(0, 1);
-
 $page_content = include_template('index.php', [
     'categories' => $categories,
     'lots' => $lots

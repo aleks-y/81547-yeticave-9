@@ -20,4 +20,14 @@ function price_format($price) {
 
     return $price_formated . ' ' . $ruble_letter;
 };
+
+/**
+ * Функция генерации статуса авторизации.
+ *
+ * @return integer статус авторизации
+ */
+
+function auth_status() {
+    return $is_auth = rand(0, 1);
+};
 ?>
