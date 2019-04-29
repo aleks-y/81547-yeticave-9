@@ -30,4 +30,23 @@ function price_format($price) {
 function auth_status() {
     return $is_auth = rand(0, 1);
 };
+
+/**
+ * Функция определения времени до конца аукциона (условно определено время жизни каждого лота до полуночи).
+ *
+ * var $current_time текущая дата и время в формате DateTime
+ * var $midnight дата и время полуночи следующего дня в формате DateTime
+ * var $diff время до полуночи в формате DateInterval
+ *
+ * @return string время в часах и минутах до конца аукциона
+ */
+
+function time_until_midnight() {
+    $current_time = date_create('now');
+    $midnight = date_create('tomorrow midnight');
+
+    $diff = date_diff($current_time, $midnight);
+
+    return date_interval_format($diff, '%h:%i');
+};
 ?>
