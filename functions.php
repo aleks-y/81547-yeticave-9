@@ -34,19 +34,19 @@ function auth_status() {
 /**
  * Функция определения времени до конца аукциона (условно определено время жизни каждого лота до полуночи).
  *
- * var $current_time текущая дата и время в формате DateTime
- * var $midnight дата и время полуночи следующего дня в формате DateTime
- * var $diff время до полуночи в формате DateInterval
+ * var $current_time текущая дата и время в формате unixtime
+ * var $midnight дата и время полуночи следующего дня в формате unixtime
+ * var $diff время до полуночи в формате unixtime
  *
- * @return string время в часах и минутах до конца аукциона
+ * @return integer секундах до конца аукциона
  */
 
 function time_until_midnight() {
-    $current_time = date_create('now');
-    $midnight = date_create('tomorrow midnight');
+    $current_time = strtotime('now');
+    $midnight = strtotime('tomorrow midnight');
 
-    $diff = date_diff($current_time, $midnight);
+    $diff = $midnight - $current_time;
 
-    return date_interval_format($diff, '%h:%i');
+    return $diff;
 };
 ?>
