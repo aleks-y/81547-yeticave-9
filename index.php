@@ -1,4 +1,5 @@
 <?php
+require('config.php');
 require('data.php');
 require('helpers.php');
 require('functions.php');
